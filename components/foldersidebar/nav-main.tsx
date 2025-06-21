@@ -1,8 +1,10 @@
 "use client"
 
+
 import { ChevronRight, type LucideIcon } from "lucide-react"
 import Image from "next/image"
 
+import { Toggle } from "@/components/ui/toggle"
 import {
   Collapsible,
   CollapsibleContent,
@@ -47,7 +49,7 @@ export function NavMain({
           >
             <SidebarMenuItem>
               <CollapsibleTrigger asChild>
-                <SidebarMenuButton tooltip={item.title}>
+                <SidebarMenuButton tooltip={item.title} className="font-medium">
                   {typeof item.icon === "string" ? (
                   <Image
                     src={item.icon}
@@ -68,7 +70,7 @@ export function NavMain({
                 <SidebarMenuSub>
                   {item.items?.map((subItem) => (
                     <SidebarMenuSubItem key={subItem.title}>
-                      <SidebarMenuSubButton asChild>
+                      <SidebarMenuSubButton asChild className="hover:bg-amber-300 ">
                         <a href={subItem.url}>
                           {subItem.icon && typeof subItem.icon === "string" && (
                             <Image
@@ -79,7 +81,7 @@ export function NavMain({
                               className="mr-2 object-contain inline-block"
                             />
                             )}
-                          <span>{subItem.title}</span>
+                          <span className="font-medium ">{subItem.title}</span>
                         </a>
                         
                       </SidebarMenuSubButton>

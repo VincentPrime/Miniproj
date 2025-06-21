@@ -42,12 +42,12 @@ const data = {
       items: [
         {
           title: "Ecommerce",
-          url: "#",
+          url: "/Dashboard",
           icon: "/icons/money.png"
         },
         {
           title: "Analytics",
-          url: "#",
+          url: "/Analytics",
           icon: "/icons/analysis.png"
         },
         {
