@@ -4,20 +4,7 @@ import { Separator } from "@/components/ui/separator"
 import Image from "next/image"
 
 
-import{
-  Card,
-  CardHeader,
-  CardFooter,
-  CardTitle,
-  CardDescription,
-  CardContent,
-} from "@/components/ui/card"
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from '@/components/ui/chart'
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -31,13 +18,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-import{
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from "@/components/ui/carousel"
+
 import {
   Command,
   CommandDialog,
@@ -51,11 +32,16 @@ import {
 } from "@/components/ui/command"
 
 import { SheetDemo } from "@/components/side/side-bar"
-import { ChartPieDonutText } from "@/components/piechart/pie-chart"
-import {Component} from "@/components/piechart/barchart"
-import { Linebars } from "@/components/piechart/linechart"
-import { Radarchart } from "@/components/piechart/radarchart"
+
+import { Linebars } from "@/components/analyticscharts/linechart"
+import { Radarchart } from "@/components/analyticscharts/radarchart"
 import { Settings } from "lucide-react"
+import { Barcharts } from "@/components/analyticscharts/barchart2"
+import { Sidechart } from "@/components/analyticscharts/sidechart"
+import { Radial } from "@/components/analyticscharts/radial"
+import { Linebars2 } from "@/components/analyticscharts/linechart2"
+import { Linebars3 } from "@/components/analyticscharts/linechart3"
+import { Linebars4 } from "@/components/analyticscharts/linechart4"
 
 export default function Analytics(){
     return(
@@ -91,7 +77,14 @@ export default function Analytics(){
 
               <div className="flex flex-1 flex-col gap-4 p-4 ">
                 <div className="grid auto-rows-min">
-                    <h1 className="text-4xl font-medium">Hi Welcome Back</h1>
+                    <h1 className="text-4xl font-medium flex">Hi Welcome Back
+                      <Image
+                      src="/icons/wave.gif"
+                      alt=""
+                      width={40}
+                      height={20}
+                      />
+                    </h1>
                 </div>
       
       
@@ -100,22 +93,31 @@ export default function Analytics(){
                         <Linebars/>
                     </div>
                     <div >
-                         <Linebars/>
+                         <Linebars2/>
                     </div>
                     <div >
-                         <Linebars/>
+                         <Linebars3/>
                     </div>
                     <div>
-                         <Linebars/>
+                         <Linebars4/>
                     </div>
                 </div>
       
-                <div className="grid auto-rows-min md:grid-cols-[360px_1fr] grid-cols-1 gap-4">
+                <div className="grid auto-rows-min md:grid-cols-[360px_1fr] grid-cols-1 gap-4 mt-4">
                   <div>
-                    <Radarchart/>
+                  <Radarchart/>
                   </div>
                   <div>
-                   <Component/>
+                   <Barcharts/>
+                  </div>
+                </div>
+
+                <div className="grid auto-rows-min md:grid-cols-[1fr_400px] grid-cols-1 gap-4 mt-4">
+                  <div>
+                  <Sidechart/>
+                  </div>
+                  <div>
+                  <Radial/>
                   </div>
                 </div>
                 

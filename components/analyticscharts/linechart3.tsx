@@ -18,11 +18,11 @@ import {
   ChartTooltipContent,
 } from '@/components/ui/chart'
 const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
+  { month: "January", desktop: 100, mobile: 80 },
+  { month: "February", desktop: 200, mobile: 200 },
+  { month: "March", desktop: 150, mobile: 170 },
+  { month: "April", desktop: 50, mobile: 100 },
+  { month: "May", desktop: 150, mobile: 130 },
   { month: "June", desktop: 214, mobile: 140 },
 ]
 
@@ -33,15 +33,15 @@ const chartConfig = {
   },
   mobile: {
     label: "Mobile",
-    color: "#0261fa",
+    color: "#f5424e",
   },
 } satisfies ChartConfig
 
-export function Linebars() {
+export function Linebars3() {
   return (
-    <Card>
+    <Card className="bg-gradient-to-br from-[#FFF9E4] to-[#FFECB8]">
       <CardHeader>
-        <CardTitle>Line Chart - Dots</CardTitle>
+        <CardTitle>Purchase Orders</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
@@ -78,17 +78,22 @@ export function Linebars() {
                 r: 6,
               }}
             />
+             <Line
+              dataKey="mobile"
+              type="natural"
+              stroke="var(--color-mobile)"
+              strokeWidth={2}
+              dot={{
+                fill: "var(--color-mobile)",
+              }}
+              activeDot={{
+                r: 6,
+              }}
+            />
           </LineChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col items-start gap-2 text-sm">
-        <div className="flex gap-2 font-medium leading-none">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-        </div>
-        <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
-        </div>
-      </CardFooter>
+ 
     </Card>
   )
 }

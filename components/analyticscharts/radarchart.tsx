@@ -41,7 +41,7 @@ const chartConfig = {
     color: "#F4A462",
   },
   Africa: {
-    label: "",  
+    label: "Africa",  
     color: "#F1C75A",
   },
 
@@ -49,20 +49,20 @@ const chartConfig = {
 
 export function Radarchart() {
   return (
-    <Card className="flex flex-col h-full">
+    <Card className="flex flex-col ">
       <CardHeader className="items-center pb-0">
         <CardTitle>Current Visits</CardTitle>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square max-h-[250px] [&_.recharts-text]:fill-background"
+          className="mx-auto aspect-square max-h-[400px] [&_.recharts-text]:fill-background"
         >
           <PieChart>
             <ChartTooltip
               content={<ChartTooltipContent nameKey="browser"/>}
             />
-            <ChartLegend content={<ChartLegendContent nameKey="browser"/>} />
+            
             <Pie data={chartData} dataKey="visitors">
               <LabelList
                 dataKey="browser"
@@ -74,6 +74,7 @@ export function Radarchart() {
                 }
               />
             </Pie>
+              <ChartLegend content={<ChartLegendContent nameKey="browser"/>} />
           </PieChart>
         </ChartContainer>
       </CardContent>

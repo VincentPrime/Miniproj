@@ -52,7 +52,7 @@ const data = {
         },
         {
           title: "Banking",
-          url: "#",
+          url: "/Banking",
           icon: "/icons/bank.png"
         },
         {
