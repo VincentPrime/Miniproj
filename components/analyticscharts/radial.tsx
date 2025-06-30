@@ -1,7 +1,7 @@
 "use client"
 
 import { TrendingUp } from "lucide-react"
-import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts"
+import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, } from "recharts"
 
 import {
   Card,
@@ -61,12 +61,14 @@ export function Radial() {
               cursor={false}
               content={<ChartTooltipContent indicator="line" />}
             />
-            <PolarAngleAxis dataKey="month" />
+            <PolarAngleAxis dataKey="month"/>
+            <PolarRadiusAxis angle={90} domain={[0, 400]} tick={{ fill: "#6b7280", fontSize: 12 }} />
             <PolarGrid />
             <Radar
               dataKey="desktop"
               fill="var(--color-desktop)"
               fillOpacity={0.6}
+              
             />
             <Radar dataKey="mobile" fill="var(--color-mobile)"/>
             <ChartLegend className="mt-8" content={<ChartLegendContent />} />

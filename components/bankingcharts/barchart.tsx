@@ -63,7 +63,7 @@ export function Barc() {
   }
 
   return (
-    <Card className="w-full max-w-4xl">
+    <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <div>
           <CardTitle className="text-2xl font-semibold">Balance statistics</CardTitle>

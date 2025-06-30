@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useMemo } from "react"
-import { ArrowUp, ArrowDown, TrendingUp, TrendingDown, Info, Plus, ArrowDownToLine } from "lucide-react"
+import { ArrowUp, ArrowDown, TrendingUp, TrendingDown, Info, Plus, ArrowDownToLine, Car } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
@@ -60,7 +60,7 @@ export function Income() {
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-6 space-y-6 border rounded-3xl">
+    <Card className="p-5">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="space-y-1">
@@ -88,7 +88,7 @@ export function Income() {
       </div>
 
       {/* Income and Expenses Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 border-2 p-2 rounded-2xl">
         {/* Income Card */}
         <Card
           className={`bg-gray-50 cursor-pointer transition-all hover:shadow-md ${activeCard === "income" ? "ring-2 ring-teal-500" : ""}`}
@@ -145,7 +145,7 @@ export function Income() {
       </div>
 
       {/* Chart */}
-      <Card>
+      <Card className="border-none shadow-none">
         <CardContent className="p-6">
           <ChartContainer
             config={{
@@ -167,8 +167,8 @@ export function Income() {
               }}
             >
               <CartesianGrid vertical={false} strokeDasharray="3 3" />
-              <XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} className="text-xs" />
-              <YAxis tickLine={false} axisLine={false} tickMargin={8} className="text-xs" />
+              <XAxis dataKey="month" tickLine={false} axisLine={true} tickMargin={8} className="text-xs" />
+              <YAxis tickLine={false} axisLine={true} tickMargin={8} className="text-xs" />
               <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
               <Line
                 dataKey="value"
@@ -185,6 +185,6 @@ export function Income() {
           </ChartContainer>
         </CardContent>
       </Card>
-    </div>
+    </Card>
   )
 }

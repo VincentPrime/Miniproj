@@ -8,6 +8,10 @@ import { SheetDemo } from "@/components/side/side-bar";
 import { Income } from "@/components/bankingcharts/income";
 import { Radial } from "@/components/analyticscharts/radial";
 import { Barc } from "@/components/bankingcharts/barchart";
+import { Piec } from "@/components/bankingcharts/piechart";
+import { TableDemo } from "@/components/bankingcharts/bread";
+import { Contacts } from "@/components/bankingcharts/Contacts";
+
 
 export default function Banking(){
     return(
@@ -44,34 +48,36 @@ export default function Banking(){
 
               <div className="grid auto-rows-min md:grid-cols-[1fr_400px] grid-cols-1 gap-4 m-5">
                 {/*  */}
-              <div>
-                <Income />
+                <div>
+                  <Income />
 
-               <div className="mt-3">
-                 <Barc />
-               </div>
-              </div>
-              {/*  */}
-              <div >
-                  <Radial/>
-              </div>
+                <div className="mt-3">
+                  <Barc />
+                </div>
+                <div className="mt-3">
+                  <Piec/>
+                </div>
+
+                <div>
+                  <TableDemo/>
+                </div>
+
+                </div>
+                {/* 2nd */}
+                <div className="flex flex-col gap-4">
+                    <div>
+                      <Radial/>
+                    </div>
+
+                    <div>
+                      <Contacts/>
+                    </div>
+                </div>
                 
+               
               </div>
 
 
-
-{/* 
-                <div className="grid auto-rows-min gap-4 md:grid-cols-2">
-                    
-                </div>
-      
-                <div className="grid auto-rows-min md:grid-cols-[1fr_400px] grid-cols-1 gap-4">
-                 <Income />
-                </div>
-
-                <div className="grid auto-rows-min md:grid-cols-[1fr_400px] grid-cols-1 gap-4">
-                 
-                </div> */}
             </SidebarInset>
           </SidebarProvider>
         </>
