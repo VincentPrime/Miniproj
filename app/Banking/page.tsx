@@ -11,6 +11,8 @@ import { Barc } from "@/components/bankingcharts/barchart";
 import { Piec } from "@/components/bankingcharts/piechart";
 import { TableDemo } from "@/components/bankingcharts/bread";
 import { Contacts } from "@/components/bankingcharts/Contacts";
+import { Cardinvite } from "@/components/bankingcharts/Cardinvite";
+import { Quicktransfer } from "@/components/bankingcharts/Quicktransfer";
 
 
 export default function Banking(){
@@ -71,6 +73,14 @@ export default function Banking(){
 
                     <div>
                       <Contacts/>
+                    </div>
+
+                    <div>
+                      <Cardinvite/>
+                    </div>
+
+                    <div>
+                      <Quicktransfer/>
                     </div>
                 </div>
                 

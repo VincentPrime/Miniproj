@@ -57,7 +57,7 @@ const data = {
         },
         {
           title:"Booking",
-          url: "#",
+          url: "/Booking",
           icon: "/icons/booking.png"
         },
         {
